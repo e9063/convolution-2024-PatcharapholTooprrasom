@@ -29,9 +29,9 @@ int main()
         FF[i] = F[NF - i - 1];
     };
 
-    clock_t start_time = clock();
-    // implement here
-    #pragma omp parallel for
+// clock_t start_time = clock();
+// implement here
+#pragma omp parallel for
     for (int j = 0; j < NA - NF + 1; j++)
     {
         int sum = 0;
@@ -41,7 +41,7 @@ int main()
         }
         R[j] = sum;
     }
-    clock_t end_time = clock();
+    // clock_t end_time = clock();
 
     // ---- free memory ----
     free(F);
@@ -49,7 +49,7 @@ int main()
     free(FF);
     free(R);
     // ---- end free ----
-    double time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
-    printf("Parallel time: %f\n", time);
+    // double time = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
+    // printf("Parallel time: %f\n", time);
     return 0;
 }
