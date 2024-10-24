@@ -25,15 +25,16 @@ int main(){
     };
 
     // implement here
-    clock_t start_time = clock();
+    // clock_t start_time = clock();
     for(int j = 0; j < NA - NF + 1; j++){
         int sum = 0;
         for(int i = 0; i < NF; i++){
             sum += A[j + i]*FF[i];
         }
         R[j] = sum;
+        printf("%d\n", R[j]);
     }
-    clock_t end_time = clock();
+    // clock_t end_time = clock();
 
     // ---- free memory ----
     free(F);
@@ -41,7 +42,7 @@ int main(){
     free(FF);
     free(R);
     // ---- end free ----
-    double time = ((double)(end_time-start_time)) / CLOCKS_PER_SEC;
-    printf("Sequential time: %f\n", time);
+    // double time = ((double)(end_time-start_time)) / CLOCKS_PER_SEC;
+    // printf("Sequential time: %f\n", time);
     return 0;
 }

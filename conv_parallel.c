@@ -40,6 +40,7 @@ int main()
             sum += A[j + i] * FF[i];
         }
         R[j] = sum;
+        printf("%d\n", R[j]);
     }
     // clock_t end_time = clock();
 
