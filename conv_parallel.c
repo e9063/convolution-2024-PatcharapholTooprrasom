@@ -31,7 +31,7 @@ int main()
 
 // clock_t start_time = clock();
 // implement here
-#pragma omp parallel for
+    #pragma omp parallel for
     for (int j = 0; j < NA - NF + 1; j++)
     {
         int sum = 0;
@@ -40,9 +40,13 @@ int main()
             sum += A[j + i] * FF[i];
         }
         R[j] = sum;
-        printf("%d\n", R[j]);
     }
     // clock_t end_time = clock();
+
+    for (int j = 0; j < NA - NF + 1; j++)
+    {
+        printf("%d\n", R[j]);
+    }
 
     // ---- free memory ----
     free(F);
